@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>劳动用工法律风险体检问卷调研表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group input[type="date"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            accent-color: #667eea;
+            cursor: pointer;
+        }
+
+        .radio-item label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            margin-top: 3px;
+            accent-color: #667eea;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+            line-height: 1.6;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .sub-options {
+            background: #f8f9fa;
+            padding: 15px 15px 15px 35px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid #667eea;
+        }
+
+        .sub-options-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e8ed;
+        }
+
+        .question-number {
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .radio-group {
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .success-message .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .success-message h2 {
+            color: #27ae60;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="formContainer">
+        <div class="header">
+            <h1>劳动用工法律风险体检问卷调研表</h1>
+            <div class="subtitle">
+                <strong>背景介绍：</strong><br>
+                随着《劳动合同法》及其实施条例、《劳动争议调解仲裁法》、《职工带薪年休假条例》及实施办法等一系列劳动法规实施,劳动者维权意识明显增强,劳动争议案件数量持续上升,防范劳动风险成为企业(用人单位)的重要课题。<br><br>
+                <strong>隐私承诺：</strong>本问卷所收集的信息将严格保密,绝不外传。
+            </div>
+        </div>
+
+        <form id="surveyForm">
+            <!-- 填表人基本信息 -->
+            <div class="section-title">一、填表人基本信息</div>
+
+            <div class="form-group">
+                <label><span class="question-number">1</span>填表人姓名 <span class="required">*</span></label>
+                <input type="text" name="name" required placeholder="请输入姓名">
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">2</span>联系电话 <span class="required">*</span></label>
+                <input type="tel" name="phone" required placeholder="请输入联系电话">
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">3</span>邮箱</label>
+                <input type="email" name="email" placeholder="请输入邮箱地址">
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">4</span>填写日期</label>
+                <input type="date" name="date" id="today">
+            </div>
+
+            <!-- 主体问卷 -->
+            <div class="section-title">二、主体问卷问题</div>
+
+            <div class="form-group">
+                <label><span class="question-number">1</span>是否将民族、种族、性别、宗教信仰、户口、身体残疾、年龄、身高、经济能力等作为录用的条件？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q1" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q1" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">2</span>员工入职时,是否通过签收、培训、考试等方式告知规章制度？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q2" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q2" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">3</span>员工入职后,是否在一个月内签订书面劳动合同？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q3" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q3" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">4</span>约定试用期期限,是否存在以下情形之一？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q4" value="是" required id="q4_yes">
+                        <label for="q4_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q4" value="否" id="q4_no">
+                        <label for="q4_no">否</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q4" value="不涉及" id="q4_na">
+                        <label for="q4_na">不涉及</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q4_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="1">
+                            <label>(1) 与同一员工约定试用期超过一次</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="2">
+                            <label>(2) 以完成一定任务为期限的劳动合同约定了试用期</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="3">
+                            <label>(3) 劳动合同期限不满3个月(不包括3个月),约定试用期</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="4">
+                            <label>(4) 劳动合同期限3个月以上(包括3个月)不满1年(不包括1年),约定试用期超过1个月</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="5">
+                            <label>(5) 劳动合同期限1年以上(包括1年)不满3年(不包括3年),约定试用期超过2个月</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q4_sub" value="6">
+                            <label>(6) 3年以上固定期限劳动合同和无固定期限劳动合同约定试用期超过6个月</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">5</span>新员工入职时,是否根据不同岗位设定录用条件并书面告知员工？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q5" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q5" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">6</span>为避免员工跳槽到其它单位或自己创办和单位具有竞争关系的公司,给单位造成损失,是否存在下列情形？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q6" value="是" required id="q6_yes">
+                        <label for="q6_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q6" value="否" id="q6_no">
+                        <label for="q6_no">否</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q6" value="不涉及" id="q6_na">
+                        <label for="q6_na">不涉及</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q6_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q6_sub" value="1">
+                            <label>(1) 和单位高级管理人员、核心技术人员、涉密人员签订竞业限制协议,明确约定竞业限制补偿金</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q6_sub" value="2">
+                            <label>(2) 员工离职后按月支付竞业限制补偿金</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">7</span>规章制度是否经过专业律师或者其他专业人士审核？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q7" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q7" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">8</span>规章制度是否经过民主程序？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q8" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q8" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">9</span>员工上班时间,是否存在每天超过8小时或每周超过40小时的情形？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q9" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q9" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">10</span>是否通过劳动合同(补充协议)及其他文件约定加班费的计算基数？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q10" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q10" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">11</span>职工累计工作满一年,是否存在下列情形之一？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q11" value="是" required id="q11_yes">
+                        <label for="q11_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q11" value="否" id="q11_no">
+                        <label for="q11_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q11_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q11_sub" value="1">
+                            <label>(1) 未安排休年假</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q11_sub" value="2">
+                            <label>(2) 累计工作满1年,年休假天数低于5天</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q11_sub" value="3">
+                            <label>(3) 累计工作满10年,年休假天数低于10天</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q11_sub" value="4">
+                            <label>(4) 累计工作满20年,年休假天数低于15天</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q11_sub" value="5">
+                            <label>(5) 未制作考勤表,明确员工休年假时间及天数</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">12</span>关于社会保险,是否有下列情形之一？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q12" value="是" required id="q12_yes">
+                        <label for="q12_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q12" value="否" id="q12_no">
+                        <label for="q12_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q12_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q12_sub" value="1">
+                            <label>(1) 未缴纳养老、工伤、失业、医疗、生育保险全部险种或者部分险种</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q12_sub" value="2">
+                            <label>(2) 按照当地最低缴费基数缴纳</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q12_sub" value="3">
+                            <label>(3) 缴费基数低于员工实际工资(除员工工资超过上年度职工月平均工资三倍除外)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q12_sub" value="4">
+                            <label>(4) 入职后一段时间后开始缴费</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">13</span>员工自身原因不缴纳社保,是否(计划)要求出具放弃缴纳社保承诺或情况说明？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q13" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q13" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">14</span>劳动合同到期前,单位愿意续签劳动合同,是否(计划)向员工送达劳动合同续订通知书征求员工意见？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q14" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q14" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">15</span>第二次及以上劳动合同到期,贵单位是否(计划)单方终止劳动合同？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q15" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q15" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">16</span>以下情形是否(计划)签订无固定期限劳动合同？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q16" value="是" required id="q16_yes">
+                        <label for="q16_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q16" value="否" id="q16_no">
+                        <label for="q16_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q16_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q16_sub" value="1">
+                            <label>(1) 第一次劳动合同到期续签劳动合同,08年前后员工在本单位连续工作满10年</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q16_sub" value="2">
+                            <label>(2) 第一次和员工签订劳动合同或者国有企业改制重新订立劳动合同时,员工在单位连续工作满十年且距法定退休年龄不足十年(男60周岁,女干部55周岁,女工人50周岁)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q16_sub" value="3">
+                            <label>(3) 08年后,连续签订两次及以上劳动合同,第三次及以上签订劳动合同</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">17</span>员工不辞而别,是否(计划)按照以下方式处理？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q17" value="是" required id="q17_yes">
+                        <label for="q17_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q17" value="否" id="q17_no">
+                        <label for="q17_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q17_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体方式(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q17_sub" value="1">
+                            <label>(1) 书面催告回单位上班</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q17_sub" value="2">
+                            <label>(2) 经单位书面催告不上班或无回复,以严重违反单位规章制度或以劳动纪律为由办理解除劳动合同</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">18</span>单位是否存在以下情形之一？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q18" value="是" required id="q18_yes">
+                        <label for="q18_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q18" value="否" id="q18_no">
+                        <label for="q18_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q18_sub" style="display: none;">
+                    <div class="sub-options-title">请选择具体情形(可多选):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="1">
+                            <label>(1) 随意调整员工工作岗位</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="2">
+                            <label>(2) 拖欠员工工资</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="3">
+                            <label>(3) 未给员工缴纳社会保险费</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="4">
+                            <label>(4) 单位的规章制度违反法律、法规的规定,损害劳动者权益的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="5">
+                            <label>(5) 欺诈、胁迫员工签订书面劳动合同</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="6">
+                            <label>(6) 未安排休年假且未支付带薪年假报酬</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q18_sub" value="7">
+                            <label>(7) 以暴力、威胁或者非法限制人身自由的手段强迫劳动者劳动的,或者用人单位违章指挥、强令冒险作业危及劳动者人身安全</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">19</span>员工因为个人原因提出离职是否(计划)要求提交书面辞职信？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q19" value="是" required>
+                        <label>是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q19" value="否">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">20</span>单位根据以下情形解除劳动合同时,是否(计划)事先将解除劳动合同的理由通知单位的工会或者单位所在地工会或者上一级工会？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q20" value="是" required id="q20_yes">
+                        <label for="q20_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q20" value="否" id="q20_no">
+                        <label for="q20_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q20_sub" style="display: none;">
+                    <div class="sub-options-title">解除合同的具体情形说明(仅供参考):</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="1">
+                            <label>(1) 在试用期间被证明不符合录用条件的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="2">
+                            <label>(2) 严重违反用人单位的规章制度的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="3">
+                            <label>(3) 严重失职,营私舞弊,给用人单位造成重大损害的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="4">
+                            <label>(4) 劳动者同时与其他用人单位建立劳动关系,对完成本单位的工作任务造成严重影响,或者经用人单位提出,拒不改正的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="5">
+                            <label>(5) 以欺诈、胁迫的手段或者乘人之危,使单位在违背真实意思的情况下订立或者变更劳动合同的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="6">
+                            <label>(6) 劳动者被依法追究刑事法律责任的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="7">
+                            <label>(7) 劳动者患病或者非因工负伤,在规定的医疗期满后不能从事原工作,也不能从事由用人单位另行安排的工作的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="8">
+                            <label>(8) 劳动者不能胜任工作,经过培训或者调整工作岗位,仍不能胜任工作的</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q20_sub" value="9">
+                            <label>(9) 劳动合同订立时所依据的客观情况发生重大变化,致使劳动合同无法履行,经用人单位与劳动者协商,未能就变更劳动合同内容达成协议的</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><span class="question-number">21</span>以员工严重违反规章制度为由解除劳动合同,是否存在下列全部情形？ <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="q21" value="是" required id="q21_yes">
+                        <label for="q21_yes">是</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="q21" value="否" id="q21_no">
+                        <label for="q21_no">否</label>
+                    </div>
+                </div>
+                <div class="sub-options" id="q21_sub" style="display: none;">
+                    <div class="sub-options-title">请检查以下要素是否全部具备:</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="1">
+                            <label>(1) 有规章制度</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="2">
+                            <label>(2) 规章制度内容不违反法律、行政法规、地方政策的规定</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="3">
+                            <label>(3) 规章制度经过了民主程序</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="4">
+                            <label>(4) 规章制度告知了劳动者</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="5">
+                            <label>(5) 劳动者有严重违反规章制度的事实且单位收集了证据</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="6">
+                            <label>(6) 事先将辞退理由通知本单位工会或者单位所在地工会或上一级工会</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="7">
+                            <label>(7) 工会对辞退的行为有异议,将处理结果书面回函告知工会</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="8">
+                            <label>(8) 将解除劳动合同通知书有效送达给劳动者</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="9">
+                            <label>(9) 向劳动者出具离职证明</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="10">
+                            <label>(10) 办理社保、档案转移手续</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="q21_sub" value="11">
+                            <label>(11) 针对严重违反单位规章制度解除劳动合同建立法律风险防控体系(包括风险防控手册、操作流程图、标准落地法律文书体系)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">提交问卷</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <div class="icon">✓</div>
+            <h2>提交成功!</h2>
+            <p>感谢您的配合,我们将根据问卷内容为您出具劳动用工法律风险评估报告。</p>
+        </div>
+
+        <div class="footer-note">
+            本问卷内容将严格保密,绝不外传<br>
+            工作日: 30个工作日内出具评估报告
+        </div>
+    </div>
+
+    <script>
+        // 设置今天的日期
+        document.getElementById('today').valueAsDate = new Date();
+
+        // 子问题显示/隐藏逻辑
+        const subQuestions = {
+            'q4': 'q4_sub',
+            'q6': 'q6_sub',
+            'q11': 'q11_sub',
+            'q12': 'q12_sub',
+            'q16': 'q16_sub',
+            'q17': 'q17_sub',
+            'q18': 'q18_sub',
+            'q20': 'q20_sub',
+            'q21': 'q21_sub'
+        };
+
+        // 为每个主问题添加事件监听
+        for (const [mainQ, subQ] of Object.entries(subQuestions)) {
+            const yesRadio = document.getElementById(mainQ + '_yes');
+            const subContainer = document.getElementById(subQ);
+
+            if (yesRadio && subContainer) {
+                yesRadio.addEventListener('change', function() {
+                    if (this.checked) {
+                        subContainer.style.display = 'block';
+                    }
+                });
+
+                // 监听其他选项
+                const allRadios = document.querySelectorAll(`input[name="${mainQ}"]`);
+                allRadios.forEach(radio => {
+                    if (radio.id !== mainQ + '_yes') {
+                        radio.addEventListener('change', function() {
+                            if (this.checked) {
+                                subContainer.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            }
+        }
+
+        // 表单提交处理
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 收集表单数据
+            const formData = new FormData(this);
+            const data = {};
+
+            // 基本信息
+            data['姓名'] = formData.get('name');
+            data['联系电话'] = formData.get('phone');
+            data['邮箱'] = formData.get('email');
+            data['填写日期'] = formData.get('date');
+            data['提交时间'] = new Date().toLocaleString('zh-CN');
+
+            // 问卷答案
+            for (let i = 1; i <= 21; i++) {
+                const answer = formData.get('q' + i);
+                data['问题' + i + '答案'] = answer || '未回答';
+
+                // 收集子问题答案
+                const subAnswers = [];
+                const checkboxes = document.querySelectorAll(`input[name="q${i}_sub"]:checked`);
+                checkboxes.forEach(cb => {
+                    subAnswers.push(cb.value);
+                });
+                if (subAnswers.length > 0) {
+                    data['问题' + i + '子问题'] = subAnswers.join(', ');
+                }
+            }
+
+            // 转换为JSON
+            const jsonData = JSON.stringify(data, null, 2);
+
+            // 生成文件名
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+            const fileName = `问卷提交_${data['姓名']}_${timestamp}.json`;
+
+            // 创建下载
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // 显示成功消息
+            document.getElementById('surveyForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // 保存到本地存储(备选)
+            localStorage.setItem('lastSubmission', jsonData);
+        });
+
+        // 表单验证
+        function validateForm() {
+            const form = document.getElementById('surveyForm');
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    isValid = false;
+                    field.style.borderColor = '#e74c3c';
+                } else {
+                    field.style.borderColor = '#e1e8ed';
+                }
+            });
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
